@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cryptography_Tools
+namespace Cryptography_Tools.rsa
 {
-    public partial class Form1 : Form
+    public partial class Rsa_Form : Form
     {
-        public Form1()
+        public Rsa_Form()
         {
             InitializeComponent();
+        }
+
+        private void Rsa_Form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
