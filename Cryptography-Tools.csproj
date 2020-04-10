@@ -60,6 +60,13 @@
     <Compile Include="rsa\Rsa_Form.Designer.cs">
       <DependentUpon>Rsa_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="smalltools\base64\Base64.cs" />
+    <Compile Include="smalltools\base64\Base64_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="smalltools\base64\Base64_Form.Designer.cs">
+      <DependentUpon>Base64_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="smalltools\SmallTools_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +87,9 @@
     </Compile>
     <EmbeddedResource Include="rsa\Rsa_Form.resx">
       <DependentUpon>Rsa_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="smalltools\base64\Base64_Form.resx">
+      <DependentUpon>Base64_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="smalltools\SmallTools_Form.resx">
       <DependentUpon>SmallTools_Form.cs</DependentUpon>
