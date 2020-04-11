@@ -27,6 +27,10 @@ namespace Cryptography_Tools.smalltools.base64
 
         private void Encode_textBox_TextChanged(object sender, EventArgs e)
         {
+            if (Encode_textBox.Text == "错误的输入，请重新输入decode!")
+            {
+                return;
+            }
             switch (chance)
             {
                 case "Base64":

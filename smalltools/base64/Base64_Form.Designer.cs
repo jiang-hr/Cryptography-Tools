@@ -42,7 +42,7 @@
             this.Encode_textBox.Name = "Encode_textBox";
             this.Encode_textBox.Size = new System.Drawing.Size(588, 190);
             this.Encode_textBox.TabIndex = 0;
-            this.Encode_textBox.Text = "Encode_textBox请把你要加密的内容放入";
+            this.Encode_textBox.Text = "Encode_textBox Please put the content you want to encrypt. Do not use utf-8.";
             this.Encode_textBox.TextChanged += new System.EventHandler(this.Encode_textBox_TextChanged);
             // 
             // Decode_textBox
@@ -52,7 +52,7 @@
             this.Decode_textBox.Name = "Decode_textBox";
             this.Decode_textBox.Size = new System.Drawing.Size(588, 230);
             this.Decode_textBox.TabIndex = 1;
-            this.Decode_textBox.Text = "Decode_textBox请把你要解密的内容放入";
+            this.Decode_textBox.Text = "Decode_textBox Please put the content you want to decrypt. Do not use utf-8.";
             this.Decode_textBox.TextChanged += new System.EventHandler(this.Decode_textBox_TextChanged);
             // 
             // Base64_button

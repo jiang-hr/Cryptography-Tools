@@ -34,7 +34,7 @@ namespace Cryptography_Tools.smalltools.base64
             }
             catch (Exception)
             {
-                decode = result;
+                decode = "错误的输入，请重新输入decode!";
             }
             return decode;
         }
@@ -68,7 +68,7 @@ namespace Cryptography_Tools.smalltools.base64
             }
             catch (Exception)
             {
-                decode = result;
+                decode = "错误的输入，请重新输入decode!";
             }
             return decode;
         }
