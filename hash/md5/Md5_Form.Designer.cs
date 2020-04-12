@@ -1,4 +1,4 @@
-﻿namespace Cryptography_Tools.smalltools.md5
+﻿namespace Cryptography_Tools.hash.md5
 {
     partial class Md5_Form
     {
@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Md5_Form";
-            this.Text = "Md5加密";
+            this.Text = "Md5_Form";
             this.Load += new System.EventHandler(this.Md5_Form_Load);
             this.ResumeLayout(false);
 

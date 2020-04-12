@@ -20,7 +20,7 @@ namespace Cryptography_Tools.smalltools
 
         private void SmallTools_Form_Load(object sender, EventArgs e)
         {
-            
+            //Do Nothing!
         }
 
         private void Base64_button_Click(object sender, EventArgs e)
@@ -30,18 +30,17 @@ namespace Cryptography_Tools.smalltools
             this.Close();
         }
 
-        private void Md5_button_Click(object sender, EventArgs e)
-        {
-            md5.Md5_Form md5_Form = new md5.Md5_Form();
-            md5_Form.Show();
-            this.Close();
-        }
 
         private void Rc4_button_Click(object sender, EventArgs e)
         {
             rc4.Rc4_Form rc4_Form = new rc4.Rc4_Form();
             rc4_Form.Show();
             this.Close();
+        }
+
+        private void Log_textBox_TextChanged(object sender, EventArgs e)
+        {
+            //Do nothing!!!
         }
     }
 }

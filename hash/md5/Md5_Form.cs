@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cryptography_Tools.smalltools.md5
+namespace Cryptography_Tools.hash.md5
 {
     public partial class Md5_Form : Form
     {

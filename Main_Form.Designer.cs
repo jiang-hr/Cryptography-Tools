@@ -28,40 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SmallTools_Button = new System.Windows.Forms.Button();
-            this.Rsa_Button = new System.Windows.Forms.Button();
+            this.SmallTools_button = new System.Windows.Forms.Button();
+            this.Rsa_button = new System.Windows.Forms.Button();
+            this.Hash_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // SmallTools_Button
+            // SmallTools_button
             // 
-            this.SmallTools_Button.Font = new System.Drawing.Font("宋体", 16F);
-            this.SmallTools_Button.Location = new System.Drawing.Point(74, 116);
-            this.SmallTools_Button.Name = "SmallTools_Button";
-            this.SmallTools_Button.Size = new System.Drawing.Size(97, 29);
-            this.SmallTools_Button.TabIndex = 0;
-            this.SmallTools_Button.Text = "小工具集";
-            this.SmallTools_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.SmallTools_Button.UseVisualStyleBackColor = true;
-            this.SmallTools_Button.Click += new System.EventHandler(this.SmallTools_Button_Click);
+            this.SmallTools_button.Font = new System.Drawing.Font("宋体", 16F);
+            this.SmallTools_button.Location = new System.Drawing.Point(13, 104);
+            this.SmallTools_button.Name = "SmallTools_button";
+            this.SmallTools_button.Size = new System.Drawing.Size(125, 40);
+            this.SmallTools_button.TabIndex = 0;
+            this.SmallTools_button.Text = "小工具集";
+            this.SmallTools_button.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.SmallTools_button.UseVisualStyleBackColor = true;
+            this.SmallTools_button.Click += new System.EventHandler(this.SmallTools_button_Click);
             // 
-            // Rsa_Button
+            // Rsa_button
             // 
-            this.Rsa_Button.Font = new System.Drawing.Font("宋体", 16F);
-            this.Rsa_Button.Location = new System.Drawing.Point(74, 208);
-            this.Rsa_Button.Name = "Rsa_Button";
-            this.Rsa_Button.Size = new System.Drawing.Size(125, 29);
-            this.Rsa_Button.TabIndex = 1;
-            this.Rsa_Button.Text = "rsa工具集";
-            this.Rsa_Button.UseVisualStyleBackColor = true;
-            this.Rsa_Button.Click += new System.EventHandler(this.Rsa_Button_Click);
+            this.Rsa_button.Font = new System.Drawing.Font("宋体", 16F);
+            this.Rsa_button.Location = new System.Drawing.Point(12, 12);
+            this.Rsa_button.Name = "Rsa_button";
+            this.Rsa_button.Size = new System.Drawing.Size(125, 40);
+            this.Rsa_button.TabIndex = 1;
+            this.Rsa_button.Text = "rsa工具集";
+            this.Rsa_button.UseVisualStyleBackColor = true;
+            this.Rsa_button.Click += new System.EventHandler(this.Rsa_button_Click);
+            // 
+            // Hash_button
+            // 
+            this.Hash_button.Font = new System.Drawing.Font("宋体", 16F);
+            this.Hash_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Hash_button.Location = new System.Drawing.Point(13, 58);
+            this.Hash_button.Name = "Hash_button";
+            this.Hash_button.Size = new System.Drawing.Size(125, 40);
+            this.Hash_button.TabIndex = 2;
+            this.Hash_button.Text = "哈希算法";
+            this.Hash_button.UseVisualStyleBackColor = true;
+            this.Hash_button.Click += new System.EventHandler(this.Hash_button_Click);
             // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Rsa_Button);
-            this.Controls.Add(this.SmallTools_Button);
+            this.Controls.Add(this.Hash_button);
+            this.Controls.Add(this.Rsa_button);
+            this.Controls.Add(this.SmallTools_button);
             this.Name = "Main_Form";
             this.Text = "密码学工具集";
             this.Load += new System.EventHandler(this.Main_Form_Load);
@@ -71,8 +85,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button SmallTools_Button;
-        private System.Windows.Forms.Button Rsa_Button;
+        private System.Windows.Forms.Button SmallTools_button;
+        private System.Windows.Forms.Button Rsa_button;
+        private System.Windows.Forms.Button Hash_button;
     }
 }
 

@@ -30,17 +30,17 @@
         {
             this.Base64_button = new System.Windows.Forms.Button();
             this.flowLayoutPanel_Right = new System.Windows.Forms.FlowLayoutPanel();
-            this.Md5_button = new System.Windows.Forms.Button();
-            this.Log_textBox = new System.Windows.Forms.TextBox();
             this.Rc4_button = new System.Windows.Forms.Button();
+            this.Log_textBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel_Right.SuspendLayout();
             this.SuspendLayout();
             // 
             // Base64_button
             // 
+            this.Base64_button.Font = new System.Drawing.Font("宋体", 16F);
             this.Base64_button.Location = new System.Drawing.Point(3, 3);
             this.Base64_button.Name = "Base64_button";
-            this.Base64_button.Size = new System.Drawing.Size(71, 26);
+            this.Base64_button.Size = new System.Drawing.Size(125, 40);
             this.Base64_button.TabIndex = 0;
             this.Base64_button.Text = "Base64";
             this.Base64_button.UseVisualStyleBackColor = true;
@@ -49,41 +49,33 @@
             // flowLayoutPanel_Right
             // 
             this.flowLayoutPanel_Right.Controls.Add(this.Base64_button);
-            this.flowLayoutPanel_Right.Controls.Add(this.Md5_button);
             this.flowLayoutPanel_Right.Controls.Add(this.Rc4_button);
             this.flowLayoutPanel_Right.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel_Right.Name = "flowLayoutPanel_Right";
             this.flowLayoutPanel_Right.Size = new System.Drawing.Size(776, 304);
             this.flowLayoutPanel_Right.TabIndex = 2;
             // 
-            // Md5_button
+            // Rc4_button
             // 
-            this.Md5_button.Location = new System.Drawing.Point(80, 3);
-            this.Md5_button.Name = "Md5_button";
-            this.Md5_button.Size = new System.Drawing.Size(75, 26);
-            this.Md5_button.TabIndex = 1;
-            this.Md5_button.Text = "md5";
-            this.Md5_button.UseVisualStyleBackColor = true;
-            this.Md5_button.Click += new System.EventHandler(this.Md5_button_Click);
+            this.Rc4_button.Font = new System.Drawing.Font("宋体", 16F);
+            this.Rc4_button.Location = new System.Drawing.Point(134, 3);
+            this.Rc4_button.Name = "Rc4_button";
+            this.Rc4_button.Size = new System.Drawing.Size(125, 40);
+            this.Rc4_button.TabIndex = 2;
+            this.Rc4_button.Text = "rc4加密";
+            this.Rc4_button.UseVisualStyleBackColor = true;
+            this.Rc4_button.Click += new System.EventHandler(this.Rc4_button_Click);
             // 
             // Log_textBox
             // 
+            this.Log_textBox.Font = new System.Drawing.Font("宋体", 12F);
             this.Log_textBox.Location = new System.Drawing.Point(12, 322);
             this.Log_textBox.Multiline = true;
             this.Log_textBox.Name = "Log_textBox";
             this.Log_textBox.Size = new System.Drawing.Size(776, 116);
             this.Log_textBox.TabIndex = 3;
-            this.Log_textBox.Text = "目前这个日志log毫无卵用，纯粹占个地方";
-            // 
-            // Rc4_button
-            // 
-            this.Rc4_button.Location = new System.Drawing.Point(161, 3);
-            this.Rc4_button.Name = "Rc4_button";
-            this.Rc4_button.Size = new System.Drawing.Size(75, 26);
-            this.Rc4_button.TabIndex = 2;
-            this.Rc4_button.Text = "rc4";
-            this.Rc4_button.UseVisualStyleBackColor = true;
-            this.Rc4_button.Click += new System.EventHandler(this.Rc4_button_Click);
+            this.Log_textBox.Text = "小工具集集成了各种各样的小的加密方式或者是通讯方式\r\n比如最原始的rc4流密码之类的工具。\r\n当然也有许多通讯用的内容，比如base编码或者url编码。";
+            this.Log_textBox.TextChanged += new System.EventHandler(this.Log_textBox_TextChanged);
             // 
             // SmallTools_Form
             // 
@@ -106,7 +98,6 @@
         private System.Windows.Forms.Button Base64_button;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Right;
         private System.Windows.Forms.TextBox Log_textBox;
-        private System.Windows.Forms.Button Md5_button;
         private System.Windows.Forms.Button Rc4_button;
     }
 }

@@ -18,24 +18,23 @@ namespace Cryptography_Tools.smalltools.rc4
         {
             //初始化密码
             Key = new char[len];
-            if (arg.Length == 0)
+            if (arg.Length != 0)
             {
-                return;
-            }
-            //中间变量
-            int[] k = new int[len];
-            for (int i = 0; i < len; ++i)
-            {
-                Key[i] = arg[i % arg.Length];
-                k[i] = i;
-            }
-            int j = 0;
-            for (int i = 0; i < len; ++i)
-            {
-                j = (j + Key[i] + i) % len;
-                var temp = Key[i];
-                Key[i] = Key[j];
-                Key[j] = temp;
+                //中间变量
+                int[] k = new int[len];
+                for (int i = 0; i < len; ++i)
+                {
+                    Key[i] = arg[i % arg.Length];
+                    k[i] = i;
+                }
+                int j = 0;
+                for (int i = 0; i < len; ++i)
+                {
+                    j = (j + Key[i] + i) % len;
+                    var temp = Key[i];
+                    Key[i] = Key[j];
+                    Key[j] = temp;
+                }
             }
         }
 
@@ -51,7 +50,7 @@ namespace Cryptography_Tools.smalltools.rc4
                 var tmp = Key[i];
                 Key[i] = Key[j];
                 Key[j] = tmp;
-                int t = (Key[i] + Key[j]) % len;
+                var t = (Key[i] + Key[j]) % len;
                 Data[k] = (char)(data[k] ^ Key[t]);
             }
             return Data;
@@ -59,7 +58,7 @@ namespace Cryptography_Tools.smalltools.rc4
 
         public char[] HexCrypt(string data)
         {
-            char[] Data = new char[data.Length * 2];
+            var Data = new char[data.Length * 2];
             int i = 0, j = 0;
             for (int k = 0; k < data.Length; k++)
             {
@@ -70,8 +69,8 @@ namespace Cryptography_Tools.smalltools.rc4
                 Key[j] = tmp;
                 int t = (Key[i] + Key[j]) % len;
                 var temp = data[k] ^ Key[t];
-                Data[2*k] = this.Hex(temp)[0];
-                Data[2 * k+1] = this.Hex(temp)[1];
+                Data[2 * k] = this.Hex(temp)[0];
+                Data[2 * k + 1] = this.Hex(temp)[1];
             }
             return Data;
         }
@@ -79,7 +78,7 @@ namespace Cryptography_Tools.smalltools.rc4
         //16进制化
         private string Hex(int x)
         {
-            string[] alphabet = { "0", "1", "2","3","4","5","6","7","8","9","A","B","C","D","E","F" };
+            string[] alphabet = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F" };
             string first = alphabet[x % 16];
             string last = alphabet[x / 16];
             return last + first;
@@ -89,9 +88,9 @@ namespace Cryptography_Tools.smalltools.rc4
         public char AntiHex(string arg)
         {
             int[] num = new int[2];
-            for(int i = 0; i < 2; i++)
+            for (int i = 0; i < 2; i++)
             {
-                if(arg[i]<= '9')
+                if (arg[i] <= '9')
                 {
                     num[i] = arg[i] - '0';
                 }

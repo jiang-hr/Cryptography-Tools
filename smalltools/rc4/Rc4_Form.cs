@@ -21,7 +21,7 @@ namespace Cryptography_Tools.smalltools.rc4
 
         private void Rc4_Form_Load(object sender, EventArgs e)
         {
-            this.rc4 = new Rc4();
+            rc4 = new Rc4();
             rc4.Inil(Key_textBox.Text);
         }
 
@@ -50,8 +50,7 @@ namespace Cryptography_Tools.smalltools.rc4
             }
             else if (Hex_checkBox.Checked)
             {
-                //施工未完成
-                char[] decrypt = new char[Decrypt_textBox.Text.Length / 2];
+                var decrypt = new char[Decrypt_textBox.Text.Length / 2];
                 for(int i = 0; i < decrypt.Length; i++)
                 {
                     char first = Decrypt_textBox.Text[2 * i];
@@ -80,7 +79,7 @@ namespace Cryptography_Tools.smalltools.rc4
 
         private void Base64_checkBox_CheckedChanged(object sender, EventArgs e)
         {
-            if(Hex_checkBox.Checked == Base64_checkBox.Checked)
+            if (Hex_checkBox.Checked == Base64_checkBox.Checked)
             {
                 Hex_checkBox.Checked = !Hex_checkBox.Checked;
             }
