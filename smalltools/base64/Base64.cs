@@ -122,7 +122,7 @@ namespace Cryptography_Tools.smalltools.base64
         /// <summary>
         /// Converts a Base32-k string into an array of bytes.
         /// </summary>
-        /// <exception cref="System.ArgumentException">
+        /// <exception cref="ArgumentException">
         /// Input string <paramref name="s">s</paramref> contains invalid Base32-k characters.
         /// </exception>
         private static byte[] FromBase32String(string str)

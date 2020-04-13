@@ -54,7 +54,8 @@
             // 
             this.PrimeP_label.AutoSize = true;
             this.PrimeP_label.Font = new System.Drawing.Font("宋体", 12F);
-            this.PrimeP_label.Location = new System.Drawing.Point(41, 101);
+            this.PrimeP_label.ForeColor = System.Drawing.Color.Black;
+            this.PrimeP_label.Location = new System.Drawing.Point(41, 113);
             this.PrimeP_label.Name = "PrimeP_label";
             this.PrimeP_label.Size = new System.Drawing.Size(48, 16);
             this.PrimeP_label.TabIndex = 0;
@@ -65,7 +66,8 @@
             // 
             this.PrimeQ_label.AutoSize = true;
             this.PrimeQ_label.Font = new System.Drawing.Font("宋体", 12F);
-            this.PrimeQ_label.Location = new System.Drawing.Point(41, 161);
+            this.PrimeQ_label.ForeColor = System.Drawing.Color.Black;
+            this.PrimeQ_label.Location = new System.Drawing.Point(41, 170);
             this.PrimeQ_label.Name = "PrimeQ_label";
             this.PrimeQ_label.Size = new System.Drawing.Size(48, 16);
             this.PrimeQ_label.TabIndex = 1;
@@ -76,6 +78,7 @@
             // 
             this.ModN_label.AutoSize = true;
             this.ModN_label.Font = new System.Drawing.Font("宋体", 12F);
+            this.ModN_label.ForeColor = System.Drawing.Color.Black;
             this.ModN_label.Location = new System.Drawing.Point(13, 50);
             this.ModN_label.Name = "ModN_label";
             this.ModN_label.Size = new System.Drawing.Size(88, 16);
@@ -87,6 +90,7 @@
             // 
             this.PhiN_label.AutoSize = true;
             this.PhiN_label.Font = new System.Drawing.Font("宋体", 12F);
+            this.PhiN_label.ForeColor = System.Drawing.Color.Black;
             this.PhiN_label.Location = new System.Drawing.Point(12, 231);
             this.PhiN_label.Name = "PhiN_label";
             this.PhiN_label.Size = new System.Drawing.Size(88, 16);
@@ -134,7 +138,8 @@
             // 
             this.ExpE_label.AutoSize = true;
             this.ExpE_label.Font = new System.Drawing.Font("宋体", 12F);
-            this.ExpE_label.Location = new System.Drawing.Point(20, 304);
+            this.ExpE_label.ForeColor = System.Drawing.Color.Black;
+            this.ExpE_label.Location = new System.Drawing.Point(12, 293);
             this.ExpE_label.Name = "ExpE_label";
             this.ExpE_label.Size = new System.Drawing.Size(120, 16);
             this.ExpE_label.TabIndex = 8;
@@ -145,6 +150,7 @@
             // 
             this.TextM_label.AutoSize = true;
             this.TextM_label.Font = new System.Drawing.Font("宋体", 12F);
+            this.TextM_label.ForeColor = System.Drawing.Color.Black;
             this.TextM_label.Location = new System.Drawing.Point(41, 460);
             this.TextM_label.Name = "TextM_label";
             this.TextM_label.Size = new System.Drawing.Size(48, 16);
@@ -156,6 +162,7 @@
             // 
             this.CryptC_label.AutoSize = true;
             this.CryptC_label.Font = new System.Drawing.Font("宋体", 12F);
+            this.CryptC_label.ForeColor = System.Drawing.Color.Black;
             this.CryptC_label.Location = new System.Drawing.Point(41, 585);
             this.CryptC_label.Name = "CryptC_label";
             this.CryptC_label.Size = new System.Drawing.Size(48, 16);
@@ -176,7 +183,8 @@
             // 
             this.ExpD_label.AutoSize = true;
             this.ExpD_label.Font = new System.Drawing.Font("宋体", 12F);
-            this.ExpD_label.Location = new System.Drawing.Point(373, 304);
+            this.ExpD_label.ForeColor = System.Drawing.Color.Black;
+            this.ExpD_label.Location = new System.Drawing.Point(383, 293);
             this.ExpD_label.Name = "ExpD_label";
             this.ExpD_label.Size = new System.Drawing.Size(120, 16);
             this.ExpD_label.TabIndex = 12;
@@ -214,6 +222,7 @@
             // 
             this.ExpDp_label.AutoSize = true;
             this.ExpDp_label.Font = new System.Drawing.Font("宋体", 12F);
+            this.ExpDp_label.ForeColor = System.Drawing.Color.Black;
             this.ExpDp_label.Location = new System.Drawing.Point(21, 367);
             this.ExpDp_label.Name = "ExpDp_label";
             this.ExpDp_label.Size = new System.Drawing.Size(112, 16);
@@ -225,6 +234,7 @@
             // 
             this.ExpDq_label.AutoSize = true;
             this.ExpDq_label.Font = new System.Drawing.Font("宋体", 12F);
+            this.ExpDq_label.ForeColor = System.Drawing.Color.Black;
             this.ExpDq_label.Location = new System.Drawing.Point(569, 367);
             this.ExpDq_label.Name = "ExpDq_label";
             this.ExpDq_label.Size = new System.Drawing.Size(112, 16);
