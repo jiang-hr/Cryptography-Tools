@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rsa\RsaMath.cs" />
     <Compile Include="rsa\Rsa_Form.cs">
       <SubType>Form</SubType>
     </Compile>
