@@ -48,6 +48,10 @@ namespace Cryptography_Tools.rsa
             public bool FurtherAnalysis = false;
             //防止日志输出多次。
             public bool mAndCisNotSameLength = false;
+            //是否已运行低指数加密破解
+            public bool lowExp = false;
+            //是否尝试暴力分解 n
+            public bool factorN = false;
             public bool n = false;
             public bool p = false;
             public bool q = false;
@@ -328,6 +332,44 @@ namespace Cryptography_Tools.rsa
                     //Do something in there!!!
                 }
             }
+
+            //低指数攻击！
+            if (!Enable.lowExp && Enable.e && Num.e <= 17 && !Enable.p && !Enable.q && Enable.n && !Enable.phi_n)
+            {
+                Num.m = new BigInteger[Num.c.Length];
+                message += "低指数攻击进行中！\r\n";
+                for (int i = 0; i < Num.c.Length; i++)
+                {
+                    Num.m[i] = RsaDecryptCtf.KnowEcCalM((int)Num.e, Num.c[i], Num.n, 100000 / Num.c.Length);
+                    if (Num.m[i] == 0)
+                    {
+                        message += "第" + (i + 1) + "行密文解密失败！";
+                    }
+                }
+                Enable.m = true;
+                Enable.lowExp = true;
+            }
+
+            //暴力分解 n
+            if(!Enable.factorN && Enable.n && !Enable.p && !Enable.q && !Enable.phi_n)
+            {
+                Enable.factorN = true;
+                message += "暴力分解n中! \r\n";
+                BigInteger[] bigIntegers = RsaDecryptCtf.Factor(Num.n);
+                if(bigIntegers == null)
+                {
+                    message += "尝试分解失败\r\n";
+                }
+                else
+                {
+                    Enable.p = true;
+                    Num.p = bigIntegers[0];
+                    Enable.q = true;
+                    Num.q = bigIntegers[1];
+                    message += "暴力分解成功！\r\n";
+                }
+            }
+
             return message;
         }
     }

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +11,7 @@ namespace Cryptography_Tools.basicTools
     // 资源池，重构时所用，用于存放各种常量或者字符串。
     class ResourcePool
     {
+        public static double log2_10 = 3.3219280948873623478703194294894;
 
         #region 1到10000的质数表，表名称为primeTable，不要打开
 
@@ -73,5 +76,28 @@ namespace Cryptography_Tools.basicTools
         #endregion
 
 
+        public static string HttpGet(string Url, string contentType)
+        {
+            try
+            {
+                string retString = string.Empty;
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+                request.Method = "GET";
+                request.ContentType = contentType;
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream myResponseStream = response.GetResponseStream();
+                StreamReader streamReader = new StreamReader(myResponseStream);
+                retString = streamReader.ReadToEnd();
+                streamReader.Close();
+                myResponseStream.Close();
+                return retString;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
     }
 }

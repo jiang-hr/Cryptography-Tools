@@ -14,6 +14,7 @@ namespace Cryptography_Tools.basicTools
     //     注意此类里面的所有方法均为static属性。
     class BigIntegerTools
     {
+
         public static BigInteger SubsidiarySqrt(BigInteger N, BigInteger L, BigInteger R)
         {
             if (L != R)
@@ -32,10 +33,42 @@ namespace Cryptography_Tools.basicTools
             BigInteger y = SubsidiarySqrt(x, 1, x);
             if (BigInteger.Pow(y, 2) == x)
             {
-                return SubsidiarySqrt(x, 1, x);
+                return y;
             }
             return BigInteger.Zero;
         }
+
+        //
+        // 大整数开次方根，返回 [ N ^ (1 / a) ]
+        public static BigInteger SubsidiaryRoot(BigInteger N, BigInteger L, BigInteger R, int a)
+        {
+            if (L != R)
+            {
+                BigInteger mid = (L + R + 1) / 2;
+                return (N < BigInteger.Pow(mid, a)) ? SubsidiaryRoot(N, L, mid - 1, a) : SubsidiaryRoot(N, mid, R, a);
+            }
+            return L;
+        }
+
+        //
+        // 大整数开次方根，注意满足x ^ (1 / a)为整数，
+        // 注意，有小概率判断错误！
+        // 否则返回0。
+        public static BigInteger Root(BigInteger x, int a)
+        {
+            int excursion = (int)(ResourcePool.log2_10 * x.ToString().Length * (a - 1) / a) - 5;
+            if(a >= 5)
+            {
+                excursion = (int)(ResourcePool.log2_10 * x.ToString().Length * (a - 2) / a) - 3;
+            }
+            BigInteger y = SubsidiaryRoot(x, 1, x >> excursion, a);
+            if (BigInteger.Pow(y, a) == x)
+            {
+                return y;
+            }
+            return BigInteger.Zero;
+        }
+
 
         //
         // 输入字符串，并用换行符分割，如果合法十进制数组则返回true。
@@ -107,8 +140,8 @@ namespace Cryptography_Tools.basicTools
         {
             if (Gcd(x, n) != BigInteger.One)
             {
-                throw new InvertException(x.ToString()+" 与 " + n.ToString()
-                    +" 的最小公倍数不是 1 ，没有逆元！");
+                throw new InvertException(x.ToString() + " 与 " + n.ToString()
+                    + " 的最小公倍数不是 1 ，没有逆元！");
             }
             var xy = Bezout(x, n);
             return xy[0] < 0 ? xy[0] + n : xy[0] % n;
@@ -132,6 +165,8 @@ namespace Cryptography_Tools.basicTools
             }
         }
 
+        //
+        // 返回两个数的最大公约数
         public static BigInteger Gcd(BigInteger x, BigInteger y)
         {
             if (x == 0 || y == 0)
@@ -141,6 +176,8 @@ namespace Cryptography_Tools.basicTools
             return x > y ? Gcd(y, x % y) : Gcd(x, y % x);
         }
 
+        //
+        // 返回最小公倍数
         public static BigInteger Lcm(BigInteger x, BigInteger y)
         {
             return x * y / Gcd(x, y);

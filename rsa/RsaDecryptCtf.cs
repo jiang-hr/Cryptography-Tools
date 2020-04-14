@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Cryptography_Tools.basicTools;
 
@@ -75,6 +76,52 @@ namespace Cryptography_Tools.rsa
             }
             return null;
         }
+
+        //
+        // 摘要;
+        //     低指数攻击:
+        //     当 e 很小时，可以暴力算出 m ，使得 m ^ e ≡ c (\mod n)
+        //     请不要往里面放过大的e。
+        public static BigInteger KnowEcCalM(int e,BigInteger c,BigInteger n,int times)
+        {
+            for(int i = 0; i < times; i++)
+            {
+                if(BigIntegerTools.Root(c + i * n,e) != 0)
+                {
+                    return BigIntegerTools.Root(c + i * n, e);
+                }
+            }
+            return BigInteger.Zero;
+        }
+
+        //
+        // 链接至网络大数据搜索n能否分解
+        public static BigInteger[] Factor(BigInteger N)
+        {
+            string head = "http://www.factordb.com/";
+            string factor = ResourcePool.HttpGet(head + "index.php?query=" + N.ToString(), "");
+            string pattern = "index\\.php\\?id=[0-9]+";
+            MatchCollection mc = Regex.Matches(factor, pattern);
+            if (mc.Count != 3)
+            {
+                return null;
+            }
+            string arg1 = ResourcePool.HttpGet(head + mc[1].ToString(), "");
+            string arg2 = ResourcePool.HttpGet(head + mc[2].ToString(), "");
+            pattern = "<input type=\"text\" size=100 name=\"query\" value=\"[0-9]+";
+            mc = Regex.Matches(arg1 + arg2, pattern);
+            int len = "<input type=\"text\" size=100 name=\"query\" value=\"".Length;
+            if(mc.Count != 2)
+            {
+                return null;
+            }
+            BigInteger[] bigIntegers = new BigInteger[2];
+            bigIntegers[0] = BigIntegerTools.ToInteger(mc[0].ToString().Substring(len));
+            bigIntegers[1] = BigIntegerTools.ToInteger(mc[1].ToString().Substring(len));
+            return bigIntegers;
+        }
+
+
 
     }
 }
