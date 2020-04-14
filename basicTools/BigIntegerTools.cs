@@ -14,7 +14,7 @@ namespace Cryptography_Tools.basicTools
     //     注意此类里面的所有方法均为static属性。
     class BigIntegerTools
     {
-        private static BigInteger SubsidiarySqrt(BigInteger N, BigInteger L, BigInteger R)
+        public static BigInteger SubsidiarySqrt(BigInteger N, BigInteger L, BigInteger R)
         {
             if (L != R)
             {
@@ -111,7 +111,7 @@ namespace Cryptography_Tools.basicTools
                     +" 的最小公倍数不是 1 ，没有逆元！");
             }
             var xy = Bezout(x, n);
-            return xy[0] < 0 ? xy[0] + n : xy[0];
+            return xy[0] < 0 ? xy[0] + n : xy[0] % n;
         }
 
         //

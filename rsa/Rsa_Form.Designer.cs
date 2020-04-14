@@ -50,6 +50,7 @@
             this.ExpDq_textBox = new System.Windows.Forms.TextBox();
             this.Run_button = new System.Windows.Forms.Button();
             this.Log_textBox = new System.Windows.Forms.TextBox();
+            this.FurtherAnalysis_checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // PrimeP_label
@@ -265,7 +266,7 @@
             // Run_button
             // 
             this.Run_button.Font = new System.Drawing.Font("宋体", 16F);
-            this.Run_button.Location = new System.Drawing.Point(1151, 598);
+            this.Run_button.Location = new System.Drawing.Point(1145, 521);
             this.Run_button.Name = "Run_button";
             this.Run_button.Size = new System.Drawing.Size(83, 33);
             this.Run_button.TabIndex = 20;
@@ -283,11 +284,25 @@
             this.Log_textBox.Text = "消息框（log）\r\n记录内部运转内容\r\n";
             this.Log_textBox.TextChanged += new System.EventHandler(this.Log_textBox_TextChanged);
             // 
+            // FurtherAnalysis_checkBox
+            // 
+            this.FurtherAnalysis_checkBox.AutoSize = true;
+            this.FurtherAnalysis_checkBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.FurtherAnalysis_checkBox.ForeColor = System.Drawing.Color.Black;
+            this.FurtherAnalysis_checkBox.Location = new System.Drawing.Point(1129, 597);
+            this.FurtherAnalysis_checkBox.Name = "FurtherAnalysis_checkBox";
+            this.FurtherAnalysis_checkBox.Size = new System.Drawing.Size(123, 20);
+            this.FurtherAnalysis_checkBox.TabIndex = 22;
+            this.FurtherAnalysis_checkBox.Text = "开启进阶分析";
+            this.FurtherAnalysis_checkBox.UseVisualStyleBackColor = true;
+            this.FurtherAnalysis_checkBox.CheckedChanged += new System.EventHandler(this.FurtherAnalysis_checkBox_CheckedChanged);
+            // 
             // Rsa_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.FurtherAnalysis_checkBox);
             this.Controls.Add(this.Log_textBox);
             this.Controls.Add(this.Run_button);
             this.Controls.Add(this.ExpDq_textBox);
@@ -342,5 +357,6 @@
         private System.Windows.Forms.TextBox ExpDq_textBox;
         private System.Windows.Forms.Button Run_button;
         private System.Windows.Forms.TextBox Log_textBox;
+        private System.Windows.Forms.CheckBox FurtherAnalysis_checkBox;
     }
 }

@@ -45,4 +45,13 @@ namespace Cryptography_Tools.basicTools
         public InvertException() { }
         public InvertException(string message) : base(message) => Error = message;
     }
+
+    //
+    // 当本该整除时不整除抛出此异常。
+    public class NotDivisibleException : CrypException 
+    {
+        public NotDivisibleException() { }
+        public NotDivisibleException(string message) : base(message) => Error = message;
+    }
+
 }

@@ -330,7 +330,21 @@ namespace Cryptography_Tools.rsa
 
         private void Log_textBox_TextChanged(object sender, EventArgs e)
         {
+            //Do nothing!
+        }
 
+        private void FurtherAnalysis_checkBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FurtherAnalysis_checkBox.Checked)
+            {
+                rsaMath.Enable.FurtherAnalysis = true;
+                FurtherAnalysis_checkBox.ForeColor = clickLabelColor;
+            }
+            else
+            {
+                rsaMath.Enable.FurtherAnalysis = false;
+                FurtherAnalysis_checkBox.ForeColor = defaultLabelColor;
+            }
         }
     }
 }

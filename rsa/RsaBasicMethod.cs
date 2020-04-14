@@ -54,12 +54,27 @@ namespace Cryptography_Tools.rsa
 
         public static BigInteger KnownpCalq(BigInteger n, BigInteger p)
         {
+            if (n % p != 0)
+            {
+                throw new NotDivisibleException("质数 = " + (p - 1).ToString() +
+                    " 不整除 n = " + n.ToString() + " 数据有误！\r\n");
+            }
             return n / p;
         }
 
         public static BigInteger KnowpdCaldp(BigInteger d,BigInteger p)
         {
             return d % (p - 1);
+        }
+
+        public static BigInteger KnowPhiNpCalQ(BigInteger phi_n, BigInteger p)
+        {
+            if(phi_n % (p - 1) != 0)
+            {
+                throw new NotDivisibleException("p - 1 = "+ (p - 1) .ToString()+
+                    " 不整除 phi_n = " + phi_n.ToString() + " 数据有误！\r\n");
+            }
+            return phi_n / (p - 1) + 1;
         }
     }
 }
