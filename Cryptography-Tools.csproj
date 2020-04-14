@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="basicTools\BigIntegerTools.cs" />
+    <Compile Include="basicTools\CrypException.cs" />
+    <Compile Include="basicTools\ResourcePool.cs" />
     <Compile Include="hash\Hash_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +71,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rsa\RsaBasicMethod.cs" />
     <Compile Include="rsa\RsaMath.cs" />
     <Compile Include="rsa\Rsa_Form.cs">
       <SubType>Form</SubType>

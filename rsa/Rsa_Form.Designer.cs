@@ -48,6 +48,8 @@
             this.ExpDq_label = new System.Windows.Forms.Label();
             this.ExpDp_textBox = new System.Windows.Forms.TextBox();
             this.ExpDq_textBox = new System.Windows.Forms.TextBox();
+            this.Run_button = new System.Windows.Forms.Button();
+            this.Log_textBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // PrimeP_label
@@ -260,11 +262,34 @@
             this.ExpDq_textBox.TabIndex = 19;
             this.ExpDq_textBox.TextChanged += new System.EventHandler(this.ExpDq_textBox_TextChanged);
             // 
+            // Run_button
+            // 
+            this.Run_button.Font = new System.Drawing.Font("宋体", 16F);
+            this.Run_button.Location = new System.Drawing.Point(1151, 598);
+            this.Run_button.Name = "Run_button";
+            this.Run_button.Size = new System.Drawing.Size(83, 33);
+            this.Run_button.TabIndex = 20;
+            this.Run_button.Text = "run";
+            this.Run_button.UseVisualStyleBackColor = true;
+            this.Run_button.Click += new System.EventHandler(this.Run_button_Click);
+            // 
+            // Log_textBox
+            // 
+            this.Log_textBox.Location = new System.Drawing.Point(1124, 32);
+            this.Log_textBox.Multiline = true;
+            this.Log_textBox.Name = "Log_textBox";
+            this.Log_textBox.Size = new System.Drawing.Size(128, 432);
+            this.Log_textBox.TabIndex = 21;
+            this.Log_textBox.Text = "消息框（log）\r\n记录内部运转内容\r\n";
+            this.Log_textBox.TextChanged += new System.EventHandler(this.Log_textBox_TextChanged);
+            // 
             // Rsa_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.Log_textBox);
+            this.Controls.Add(this.Run_button);
             this.Controls.Add(this.ExpDq_textBox);
             this.Controls.Add(this.ExpDp_textBox);
             this.Controls.Add(this.ExpDq_label);
@@ -315,5 +340,7 @@
         private System.Windows.Forms.Label ExpDq_label;
         private System.Windows.Forms.TextBox ExpDp_textBox;
         private System.Windows.Forms.TextBox ExpDq_textBox;
+        private System.Windows.Forms.Button Run_button;
+        private System.Windows.Forms.TextBox Log_textBox;
     }
 }
