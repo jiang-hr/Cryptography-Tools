@@ -28,27 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Base64_button = new System.Windows.Forms.Button();
             this.flowLayoutPanel_Right = new System.Windows.Forms.FlowLayoutPanel();
             this.Rc4_button = new System.Windows.Forms.Button();
             this.Log_textBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel_Right.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Base64_button
-            // 
-            this.Base64_button.Font = new System.Drawing.Font("宋体", 16F);
-            this.Base64_button.Location = new System.Drawing.Point(3, 3);
-            this.Base64_button.Name = "Base64_button";
-            this.Base64_button.Size = new System.Drawing.Size(125, 40);
-            this.Base64_button.TabIndex = 0;
-            this.Base64_button.Text = "Base64";
-            this.Base64_button.UseVisualStyleBackColor = true;
-            this.Base64_button.Click += new System.EventHandler(this.Base64_button_Click);
-            // 
             // flowLayoutPanel_Right
             // 
-            this.flowLayoutPanel_Right.Controls.Add(this.Base64_button);
             this.flowLayoutPanel_Right.Controls.Add(this.Rc4_button);
             this.flowLayoutPanel_Right.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel_Right.Name = "flowLayoutPanel_Right";
@@ -58,7 +45,7 @@
             // Rc4_button
             // 
             this.Rc4_button.Font = new System.Drawing.Font("宋体", 16F);
-            this.Rc4_button.Location = new System.Drawing.Point(134, 3);
+            this.Rc4_button.Location = new System.Drawing.Point(3, 3);
             this.Rc4_button.Name = "Rc4_button";
             this.Rc4_button.Size = new System.Drawing.Size(125, 40);
             this.Rc4_button.TabIndex = 2;
@@ -94,8 +81,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Base64_button;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Right;
         private System.Windows.Forms.TextBox Log_textBox;
         private System.Windows.Forms.Button Rc4_button;

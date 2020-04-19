@@ -52,7 +52,7 @@ namespace Cryptography_Tools.rsa
         //     未设置抛出异常！
         // 返回值:
         //      new BigInteger[]{ p ,q ,phi_n ,d }
-        public static BigInteger[] KnowNeDpCalD(BigInteger n,BigInteger e,BigInteger dp)
+        public static BigInteger[] KnowNeDpCalD(BigInteger n, BigInteger e, BigInteger dp)
         {
             for (int i = 1; i <= e; i++)
             {
@@ -82,11 +82,11 @@ namespace Cryptography_Tools.rsa
         //     低指数攻击:
         //     当 e 很小时，可以暴力算出 m ，使得 m ^ e ≡ c (\mod n)
         //     请不要往里面放过大的e。
-        public static BigInteger KnowEcCalM(int e,BigInteger c,BigInteger n,int times)
+        public static BigInteger KnowEcCalM(int e, BigInteger c, BigInteger n, int times)
         {
-            for(int i = 0; i < times; i++)
+            for (int i = 0; i < times; i++)
             {
-                if(BigIntegerTools.Root(c + i * n,e) != 0)
+                if (BigIntegerTools.Root(c + i * n, e) != 0)
                 {
                     return BigIntegerTools.Root(c + i * n, e);
                 }
@@ -111,17 +111,28 @@ namespace Cryptography_Tools.rsa
             pattern = "<input type=\"text\" size=100 name=\"query\" value=\"[0-9]+";
             mc = Regex.Matches(arg1 + arg2, pattern);
             int len = "<input type=\"text\" size=100 name=\"query\" value=\"".Length;
-            if(mc.Count != 2)
+            if (mc.Count != 2)
             {
                 return null;
             }
             BigInteger[] bigIntegers = new BigInteger[2];
             bigIntegers[0] = BigIntegerTools.ToInteger(mc[0].ToString().Substring(len));
             bigIntegers[1] = BigIntegerTools.ToInteger(mc[1].ToString().Substring(len));
-            return bigIntegers;
+            return bigIntegers[0] == bigIntegers[1] ? null : bigIntegers;
         }
 
-
-
+        //
+        // 本地搜索n能否暴力分解
+        internal static BigInteger[] MyFactor(BigInteger n)
+        {
+            foreach (int x in ResourcePool.primeTable)
+            {
+                if (n % x == 0)
+                {
+                    return new BigInteger[] { n / x, x };
+                }
+            }
+            return null;
+        }
     }
 }

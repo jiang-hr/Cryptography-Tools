@@ -51,6 +51,12 @@
     <Compile Include="basicTools\CrypException.cs" />
     <Compile Include="basicTools\Prime.cs" />
     <Compile Include="basicTools\ResourcePool.cs" />
+    <Compile Include="coding\Coding_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="coding\Coding_Form.Designer.cs">
+      <DependentUpon>Coding_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="hash\Hash_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,17 +81,18 @@
     <Compile Include="rsa\RsaBasicMethod.cs" />
     <Compile Include="rsa\RsaDecryptCtf.cs" />
     <Compile Include="rsa\RsaMath.cs" />
+    <Compile Include="rsa\RsaWinnerAttack.cs" />
     <Compile Include="rsa\Rsa_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="rsa\Rsa_Form.Designer.cs">
       <DependentUpon>Rsa_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="smalltools\base64\Base64.cs" />
-    <Compile Include="smalltools\base64\Base64_Form.cs">
+    <Compile Include="coding\base64\Base64.cs" />
+    <Compile Include="coding\base64\Base64_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="smalltools\base64\Base64_Form.Designer.cs">
+    <Compile Include="coding\base64\Base64_Form.Designer.cs">
       <DependentUpon>Base64_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="smalltools\rc4\Rc4.cs" />
@@ -101,6 +108,9 @@
     <Compile Include="smalltools\SmallTools_Form.Designer.cs">
       <DependentUpon>SmallTools_Form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="coding\Coding_Form.resx">
+      <DependentUpon>Coding_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="hash\Hash_Form.resx">
       <DependentUpon>Hash_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,7 +132,7 @@
     <EmbeddedResource Include="rsa\Rsa_Form.resx">
       <DependentUpon>Rsa_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="smalltools\base64\Base64_Form.resx">
+    <EmbeddedResource Include="coding\base64\Base64_Form.resx">
       <DependentUpon>Base64_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="smalltools\rc4\Rc4_Form.resx">

@@ -340,7 +340,7 @@ namespace Cryptography_Tools.rsa
                 message += "低指数攻击进行中！\r\n";
                 for (int i = 0; i < Num.c.Length; i++)
                 {
-                    Num.m[i] = RsaDecryptCtf.KnowEcCalM((int)Num.e, Num.c[i], Num.n, 100000 / Num.c.Length);
+                    Num.m[i] = RsaDecryptCtf.KnowEcCalM((int)Num.e, Num.c[i], Num.n, 84000 / Num.c.Length);
                     if (Num.m[i] == 0)
                     {
                         message += "第" + (i + 1) + "行密文解密失败！";
@@ -359,6 +359,19 @@ namespace Cryptography_Tools.rsa
                 if(bigIntegers == null)
                 {
                     message += "尝试分解失败\r\n";
+                    bigIntegers = RsaDecryptCtf.MyFactor(Num.n);
+                    if (bigIntegers == null)
+                    {
+                        message += "再次尝试分解失败\r\n";
+                    }
+                    else
+                    {
+                        Enable.p = true;
+                        Num.p = bigIntegers[0];
+                        Enable.q = true;
+                        Num.q = bigIntegers[1];
+                        message += "再次暴力分解成功！\r\n";
+                    }
                 }
                 else
                 {

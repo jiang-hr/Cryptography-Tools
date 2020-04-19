@@ -23,13 +23,6 @@ namespace Cryptography_Tools.smalltools
             //Do Nothing!
         }
 
-        private void Base64_button_Click(object sender, EventArgs e)
-        {
-            base64.Base64_Form base64_Form = new base64.Base64_Form();
-            base64_Form.Show();
-            this.Close();
-        }
-
 
         private void Rc4_button_Click(object sender, EventArgs e)
         {

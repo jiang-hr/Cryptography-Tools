@@ -31,12 +31,13 @@
             this.SmallTools_button = new System.Windows.Forms.Button();
             this.Rsa_button = new System.Windows.Forms.Button();
             this.Hash_button = new System.Windows.Forms.Button();
+            this.Coding_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SmallTools_button
             // 
             this.SmallTools_button.Font = new System.Drawing.Font("宋体", 16F);
-            this.SmallTools_button.Location = new System.Drawing.Point(13, 104);
+            this.SmallTools_button.Location = new System.Drawing.Point(191, 12);
             this.SmallTools_button.Name = "SmallTools_button";
             this.SmallTools_button.Size = new System.Drawing.Size(125, 40);
             this.SmallTools_button.TabIndex = 0;
@@ -68,11 +69,23 @@
             this.Hash_button.UseVisualStyleBackColor = true;
             this.Hash_button.Click += new System.EventHandler(this.Hash_button_Click);
             // 
+            // Coding_button
+            // 
+            this.Coding_button.Font = new System.Drawing.Font("宋体", 16F);
+            this.Coding_button.Location = new System.Drawing.Point(191, 58);
+            this.Coding_button.Name = "Coding_button";
+            this.Coding_button.Size = new System.Drawing.Size(125, 40);
+            this.Coding_button.TabIndex = 3;
+            this.Coding_button.Text = "编码转换";
+            this.Coding_button.UseVisualStyleBackColor = true;
+            this.Coding_button.Click += new System.EventHandler(this.Coding_button_Click);
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(341, 230);
+            this.Controls.Add(this.Coding_button);
             this.Controls.Add(this.Hash_button);
             this.Controls.Add(this.Rsa_button);
             this.Controls.Add(this.SmallTools_button);
@@ -88,6 +101,7 @@
         private System.Windows.Forms.Button SmallTools_button;
         private System.Windows.Forms.Button Rsa_button;
         private System.Windows.Forms.Button Hash_button;
+        private System.Windows.Forms.Button Coding_button;
     }
 }
 

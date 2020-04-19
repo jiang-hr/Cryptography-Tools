@@ -39,5 +39,10 @@ namespace Cryptography_Tools
             var hash_Form = new hash.Hash_Form();
             hash_Form.Show();
         }
+
+        private void Coding_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
